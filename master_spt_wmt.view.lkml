@@ -1,15 +1,17 @@
 view: master_spt_wmt {
+  label: "Smartpack"
   sql_table_name: `es-s2dl-core-p.smart_pack_looker_poc.master_spt_wmt`
     ;;
 
-  dimension: avg_wall_depth {
+  dimension: average_wall_depth{
     type: number
     sql: ${TABLE}.avg_wall_depth ;;
   }
 
-  dimension: avg_wall_height_percent {
+  dimension: average_wall_height_percent {
     type: number
     sql: ${TABLE}.avg_wall_height_percent ;;
+    value_format_name: percent_2
   }
 
   dimension: door_number {
@@ -17,14 +19,16 @@ view: master_spt_wmt {
     sql: ${TABLE}.door_number ;;
   }
 
-  dimension: end_fullness_mc {
+  dimension: fullness_end {
     type: number
     sql: ${TABLE}.end_fullness_mc ;;
+    value_format_name: percent_2
   }
 
   dimension: idle_time_percentage {
     type: number
     sql: ${TABLE}.idle_time_percentage ;;
+    value_format_name: percent_2
   }
 
   dimension: load_classification {
@@ -85,9 +89,10 @@ view: master_spt_wmt {
     sql: ${TABLE}.reason_code ;;
   }
 
-  dimension: start_fullness_mc {
+  dimension: fullness_start {
     type: number
     sql: ${TABLE}.start_fullness_mc ;;
+    value_format_name: percent_2
   }
 
   dimension: trailer_type {
