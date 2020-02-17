@@ -64,8 +64,8 @@ view: sorter_configuration {
     sql: ${TABLE}.bag_chute ;;
   }
 
-  dimension_group: cut_time {
-    type: time
+  dimension: cut_time {
+    type: string
     sql: ${TABLE}.cut_time ;;
   }
 
@@ -77,7 +77,7 @@ view: sorter_configuration {
       scac,
       box_chute,
       bag_chute,
-      cut_time_time
+      cut_time
     ]
   }
 
