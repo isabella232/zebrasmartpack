@@ -170,7 +170,7 @@ view: master_spt_wmt {
 
   measure: idle_time {
     type: number
-    sql: ${total_idle_time_hours}/${total_load_duration_hours} ;;
+    sql: ${total_idle_time_hours}/NULLIF(${total_load_duration_hours},0) ;;
     value_format_name: percent_0
     drill_fields: [drill_detail_base*]
   }
@@ -183,7 +183,7 @@ view: master_spt_wmt {
 
   measure: average_number_of_walls {
     type: number
-    sql: ${total_number_of_walls}/${total_loads} ;;
+    sql: ${total_number_of_walls}/NULLIF(${total_loads},0) ;;
     value_format_name: decimal_1
     drill_fields: [drill_detail_base*]
   }
@@ -196,7 +196,7 @@ view: master_spt_wmt {
 
   measure: overall_average_wall_depth {
     type: number
-    sql: ${total_estimated_wall_depth}/${total_number_of_walls} ;;
+    sql: ${total_estimated_wall_depth}/NULLIF(${total_number_of_walls},0) ;;
     value_format_name: decimal_2
     drill_fields: [drill_detail_base*]
   }
@@ -215,7 +215,7 @@ view: master_spt_wmt {
 
   measure: average_fullness_per_load {
     type: number
-    sql: ${total_fullness}/${total_loads} ;;
+    sql: ${total_fullness}/NULLIF(${total_loads},0) ;;
     value_format_name: percent_0
     drill_fields: [drill_detail_base*]
 
